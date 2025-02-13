@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Tester</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header 区域 -->
+  <header class="app-header">
+    <div class="logo">
+      <span>API Tester</span>
+      <!-- 这里可以添加品牌图标 -->
+    </div>
+    <div class="method-selector">
+      <button id="get-btn" class="active">GET</button>
+      <button id="post-btn">POST</button>
+    </div>
+  </header>
+
+  <!-- Main 功能区域 -->
+  <main class="app-main">
+    <!-- 请求构建模块 -->
+    <div class="request-builder">
+      <input type="text" id="url-input" placeholder="Enter API URL" autocomplete="off">
+      <div class="params-container">
+        <div class="param-row">
+          <input type="text" placeholder="Key">
+          <input type="text" placeholder="Value">
+          <button class="remove-param">X</button>
+        </div>
+        <button id="add-param-btn">Add Parameter</button>
+      </div>
+      <textarea id="request-body" placeholder="Request Body (JSON)"></textarea>
+      <div class="headers-container">
+        <div class="header-row">
+          <input type="text" placeholder="Header Key">
+          <input type="text" placeholder="Header Value">
+          <button class="remove-header">X</button>
+        </div>
+        <button id="add-header-btn">Add Header</button>
+      </div>
+      <button id="send-request-btn">Send Request</button>
+    </div>
+
+    <!-- 响应展示面板 -->
+    <div class="response-viewer">
+      <div class="status-info">
+        <span id="status-code">Status Code: -</span>
+        <span id="response-time">Response Time: -</span>
+      </div>
+      <div class="response-content">
+        <div id="formatted-json"></div>
+        <textarea id="raw-response" placeholder="Raw Response Data"></textarea>
+        <button id="toggle-raw">Toggle Raw Data</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer 区域 -->
+  <footer class="app-footer">
+    <div>© 2023 API Tester</div>
+    <div>Author: Ray | Version: v0.0.1</div>
+    <div>Powered by Fetch API</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
